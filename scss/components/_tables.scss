@@ -1,0 +1,17 @@
+table, .table {
+    width: 100%;
+    margin: calc(var(--padding) / 2) 0;
+
+    &.table-striped {
+        border-collapse: separate;
+        border-spacing: 0;
+        border-radius: var(--border-radius);
+        border: var(--border-style);
+        & tr:nth-child(even) {
+            background-color: var(--color-base-darken);
+        }
+        & th, td {
+            padding: calc(var(--padding) / 2);
+        }
+    }
+}

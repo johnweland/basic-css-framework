@@ -1,0 +1,30 @@
+{
+    "short_name": "Docs",
+    "name": "Documentation Template",
+    "description": "This is an example of a meta description. This will often show up in search results.",
+    "icons": [
+        {
+            "src": "/images/document.svg",
+            "type": "image/svg",
+            "sizes": "144x144",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/images/document.svg",
+            "type": "image/svg",
+            "sizes": "192x192",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/images/document.svg",
+            "type": "image/svg",
+            "sizes": "512x512",
+            "purpose": "any maskable"
+        }
+    ],
+    "start_url": "/",
+    "background_color": "#343a40",
+    "display": "standalone",
+    "scope": "/",
+    "theme_color": "#343a40"
+}

@@ -1,0 +1,26 @@
+a.btn, button, button.btn, input[type="button"], input[type="button"].btn {
+    appearance: none;
+    display: inline-block;
+    padding: var(--padding);
+    font-size: clamp(1.25rem, 1.5vw, 1.5rem);
+    width: auto;
+    background-color: var(--color-base-darken);
+    border-radius: var(--border-radius);
+    border: var(--border-style);
+    border-color: transparent;
+    color: var(--color-font);
+    outline: unset;
+    text-decoration: unset;
+    text-align: center;
+    margin-top: calc(var(--padding) / 2);
+    margin-right: calc(var(--padding) / 2);
+    cursor: pointer;
+    &:last-child {
+        margin-right: unset;
+    }
+
+    &.btn-outline {
+        background-color: var(--color-base);
+        border-color: var(--color-base-darken);
+    }
+}
