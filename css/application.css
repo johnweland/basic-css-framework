@@ -253,13 +253,6 @@ input[type="date"]:before {
   margin-right: calc(var(--padding) / 2);
 }
 
-[type="file"] + label span {
-  display: inline-block;
-  height: 100%;
-  transition: all 0.3s;
-  width: 100%;
-}
-
 [type="file"] + label::before {
   color: var(--color-font);
   font-family: "FontAwesome";
@@ -269,7 +262,7 @@ input[type="date"]:before {
   left: 0;
   line-height: 1;
   position: absolute;
-  left: -180%;
+  left: -110%;
   transition: all 0.3s;
   width: 100%;
 }
@@ -279,7 +272,7 @@ input[type="date"]:before {
 }
 
 [type="file"] + label:hover::before {
-  left: -35%;
+  left: 5%;
 }
 
 .form-group {

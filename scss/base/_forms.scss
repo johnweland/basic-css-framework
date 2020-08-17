@@ -54,8 +54,6 @@ input[type="checkbox"], input[type="radio"] {
             }
         }
     }
-
-    
 }
 
 input[type="checkbox"] {
@@ -128,13 +126,6 @@ input[type="date"] {
     vertical-align: middle;
     overflow: hidden;
     margin-right: calc(var(--padding) / 2);
-        
-    & span {
-        display: inline-block;
-        height: 100%;
-        transition: all 0.3s;
-        width: 100%;
-    }
     
     &::before {
         color: var(--color-font);
@@ -145,7 +136,7 @@ input[type="date"] {
         left: 0;
         line-height: 1;
         position: absolute;
-        left: -180%;
+        left: -110%;
         transition: all 0.3s;
         width: 100%;
     }
@@ -155,7 +146,7 @@ input[type="date"] {
             transform: translateY(300%);
         } 
         &::before {
-            left: -35%;
+            left: 5%;
         }
     }
 }
