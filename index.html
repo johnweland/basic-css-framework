@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
     <link rel="stylesheet" href="css/application.min.css">
     <title>Basic CSS Framework</title>
 </head>
@@ -13,12 +14,17 @@
         <label for="toggle" class="switch" title="Enable Light Theme"></label>
         <!-- / theme toggle -->
 
+
+
+        <h2>Buttons</h2>
         <button class="button">Button</button>
         <button class="btn btn-outline">Button</button>
         <input type="button" value="Input Button"/>
         <a class="btn" href="#">Link as Button</a>
 
 
+
+        <h2>Tables</h2>
         <!-- table -->
         <table class="table table-striped">
             <tr>
@@ -58,6 +64,41 @@
             </tr>
           </table>
         <!-- / table -->
+
+
+
+        <h2>Forms</h2>
+        <form>
+          <legend>Form Legend</legend>
+          <fieldset>
+            <div class="form-group">
+              <label>Text</label><input type="text" class="full-width">
+            </div>
+            <div class="form-group">
+              <label>Password</label><input type="password" class="full-width">
+            </div>
+            <div class="form-group">
+              <label>Email</label><input type="email" class="full-width" title="disabled" disabled value="test@example.com">
+            </div>
+            <div class="form-group">
+              <label>Number</label><input type="number">
+            </div>
+            <div class="form-group">
+              <label>Date Picker</label><input type="date">
+              <input type="file"><label>File Picker</label>
+              <label>Color Picker</label><input type="color">
+            </div>
+            <div class="form-group">
+              <label>Checkbox</label>
+              <input type="checkbox">
+              <input type="checkbox" checked>
+              <input type="checkbox" title="disabled" disabled checked>
+            </div>
+            <div class="form-group">
+              <label>Radio Selector</label><input type="radio" name="test"><input type="radio" name="test">
+            </div>
+          </fieldset>
+        </form>
     </div>
     
 

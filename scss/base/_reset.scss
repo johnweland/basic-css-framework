@@ -1,20 +1,18 @@
 :root, [data-theme="light"], [data-theme="default"] {
     --color-base: rgba(230, 230, 230, 1);
-    --color-base-start: var(--color-base);
-    --color-base-end: rgba(200, 200, 200, 1);
     --color-font: rgba(49, 49, 49, 1);
     --color-base-darken: rgba(206, 206, 206, 1);
-    --border-radius: 5px;
+    --color-disabled: rgba(150, 150, 150, 1);
+    --border-radius: 2px;
     --border-style: 1px solid var(--color-base-darken);
     --padding: 1rem;
 }
 
 [data-theme="dark"] {
     --color-base: rgba(49, 49, 49, 1);
-    --color-base-start: var(--color-base);
-    --color-base-end: rgba(20, 20, 20, 1);
     --color-font: rgba(230, 230, 230, 1);
     --color-base-darken: rgba(15, 15, 15, 1);
+    --color-disabled: rgba(30, 30, 30, 1);
     --border-style: 1px solid var(--color-base-darken);
 }
 
@@ -42,7 +40,6 @@ body {
     flex-direction: column;
     min-height: 100vh;
     background-color: var(--color-base);
-    // background: linear-gradient(135deg, var(--color-base-start) 0%, var(--color-base-end) 100%);
     color: var(--color-font);
     font-size: 1.6rem;
     padding: calc(var(--padding) / 2);
