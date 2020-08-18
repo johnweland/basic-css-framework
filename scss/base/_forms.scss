@@ -26,10 +26,10 @@ input, select {
     border: 1px solid transparent;
     outline:none;
     color: var(--color-font);
-    margin: calc(var(--padding) / 2);
     font-size: 1.2rem;
     height: 4rem;
     transition: all 0.5s ease;
+    margin-top: calc(var(--padding) / 2);
     &:disabled {
         background-color: var(--color-disabled);
         color: var(--color-base);
@@ -131,6 +131,7 @@ input[type="date"] {
         outline: none;
         padding: 1.3rem 50px;
         position: relative;
+        top: 3px;
         transition: all 0.3s;
         vertical-align: middle;
         overflow: hidden;
@@ -180,6 +181,9 @@ select {
     position: relative;
     display: flex;
     align-items: center;
+    justify-self: start;
+    flex-wrap: wrap;
+    & > *:not(label):not([type="checkbox"]):not([type="radio"]):not([type="color"]) {flex-grow: 1;}
     & > label:first-child {
         margin-left: calc(var(--padding) / 2);
     }
@@ -205,8 +209,5 @@ select {
     }
     & label + label:not(.inset-label) {
         margin-left: calc(var(--padding) / 2);
-    }
-    & .full-width {
-        width: 100%;
     }
 }
