@@ -142,30 +142,45 @@ fieldset {
   border: 1px solid var(--color-base-darken);
 }
 
-input {
+label {
+  font-size: 1rem;
+}
+
+input, select {
   appearance: none;
   padding: var(--padding);
   background-color: var(--color-base-darken);
-  border: none;
+  border: 1px solid transparent;
   outline: none;
   color: var(--color-font);
   margin: calc(var(--padding) / 2);
   font-size: 1.6rem;
   height: 4rem;
+  transition: all 0.5s ease;
 }
 
-input:disabled {
+input:disabled, select:disabled {
   background-color: var(--color-disabled);
   color: var(--color-base);
 }
 
+input:disabled + label, select:disabled + label {
+  color: var(--color-base);
+}
+
+input:hover, input:focus, input:active, select:hover, select:focus, select:active {
+  border: 1px solid var(--color-font);
+}
+
 input[type="checkbox"], input[type="radio"] {
+  appearance: none;
   vertical-align: middle;
   margin-top: calc((var(--padding) / 2));
   display: inline-block;
   position: relative;
   width: auto;
   height: unset;
+  min-height: unset;
 }
 
 input[type="checkbox"]:checked, input[type="radio"]:checked {
@@ -203,7 +218,6 @@ input[type="radio"]:checked::after {
 
 input[type="date"] {
   position: relative;
-  padding: 10px;
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator {
@@ -212,7 +226,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   z-index: 1;
 }
 
-input[type="date"]:before {
+input[type="date"]::before {
   color: var(--color-font);
   background: none;
   display: block;
@@ -239,18 +253,18 @@ input[type="date"]:before {
 
 [type="file"] + label {
   background: var(--color-base-darken);
-  border: none;
+  border: 1px solid transparent;
   border-radius: var(--border-radius);
   color: var(--color-font);
   cursor: pointer;
   display: inline-block;
   outline: none;
-  padding: 1rem 50px;
+  padding: 1.3rem 50px;
+  top: -2px;
   position: relative;
   transition: all 0.3s;
   vertical-align: middle;
   overflow: hidden;
-  margin-right: calc(var(--padding) / 2);
 }
 
 [type="file"] + label::before {
@@ -267,17 +281,52 @@ input[type="date"]:before {
   width: 100%;
 }
 
-[type="file"] + label:hover span {
-  transform: translateY(300%);
+[type="file"] + label:hover, [type="file"] + label:focus, [type="file"] + label:active {
+  border: 1px solid var(--color-font);
 }
 
-[type="file"] + label:hover::before {
-  left: 5%;
+[type="file"] + label:hover::before, [type="file"] + label:focus::before, [type="file"] + label:active::before {
+  left: 10%;
+}
+
+select {
+  appearance: menulist;
+  position: relative;
+  height: unset;
 }
 
 .form-group {
+  position: relative;
   display: flex;
   align-items: center;
+}
+
+.form-group > label:first-child {
+  margin-left: calc(var(--padding) / 2);
+}
+
+.form-group ::placeholder {
+  position: relative;
+  text-align: right;
+  top: -5px;
+}
+
+.form-group label.inset-label, .form-group label.inset-label {
+  position: absolute;
+  line-height: 5.2;
+  height: 100%;
+  padding-left: calc(var(--padding)* 1.5);
+  pointer-events: none;
+}
+
+.form-group input:not([type="checkbox"]):not([type="radio"]) {
+  padding-top: 2rem;
+}
+
+.form-group :focus + label.inset-label, .form-group :valid + label.inset-label {
+  line-height: 1;
+  font-size: 1rem;
+  top: 1rem;
 }
 
 .form-group .full-width {

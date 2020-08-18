@@ -72,21 +72,24 @@
           <legend>Form Legend</legend>
           <fieldset>
             <div class="form-group">
-              <label>Text</label><input type="text" class="full-width">
+              <input type="text" class="full-width" title="Disabled" disabled required><label class="inset-label">Disabled</label>
             </div>
             <div class="form-group">
-              <label>Password</label><input type="password" class="full-width">
+              <input type="text" class="full-width" required><label class="inset-label">Name</label>
             </div>
             <div class="form-group">
-              <label>Email</label><input type="email" class="full-width" title="disabled" disabled value="test@example.com">
+              <input type="password" class="full-width" required><label class="inset-label">Password</label>
             </div>
             <div class="form-group">
-              <label>Number</label><input type="number">
+              <input type="email" class="full-width" title="disabled" placeholder="test@example.com" required><label class="inset-label">Email</label>
             </div>
             <div class="form-group">
-              <label>Date Picker</label><input type="date">
-              <input type="file"><label>File Picker</label>
-              <label>Color Picker</label><input type="color">
+              <input type="number" class="full-width" required><label class="inset-label">Age</label>
+            </div>
+            <div class="form-group">
+              <input type="date"><label class="inset-label">Birthday</label>
+              <!-- <input type="file"><label>Upload</label>
+              <label>Favorite Color</label><input type="color"> -->
             </div>
             <div class="form-group">
               <label>Checkbox</label>
@@ -95,13 +98,23 @@
               <input type="checkbox" title="disabled" disabled checked>
             </div>
             <div class="form-group">
-              <label>Radio Selector</label><input type="radio" name="test"><input type="radio" name="test">
+              <label>Radio Selector</label>
+              <input type="radio" name="test" id="a"><label for="a">Option A</label>
+              <input type="radio" name="test" id="b"><label for="b">Option B</label>
+            </div>
+            <div class="form-group">
+              <select class="full-width" required>
+                <option></option>
+                <option>Option 1</option>
+                <option>Option 2</option>
+                <option>Option 3</option>
+                <option>Option 4</option>
+              </select>
+              <label class="inset-label">Select an Option</label>
             </div>
           </fieldset>
         </form>
     </div>
-    
-
     <script src="js/application.js"></script>
 </body>
 </html>
