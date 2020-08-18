@@ -408,5 +408,6 @@ a.btn.btn-outline, button.btn-outline, button.btn.btn-outline, input[type="butto
 
 .container {
   max-width: 1080px;
+  width: 100%;
   margin: 0 auto;
 }
