@@ -292,7 +292,7 @@ input[type="date"]::before {
 select {
   position: relative;
   height: unset;
-  background: linear-gradient(45deg, transparent 50%, var(--color-base) 50%), linear-gradient(135deg, var(--color-base) 50%, transparent 50%), var(--color-base-darken);
+  background: linear-gradient(45deg, transparent 50%, var(--color-disabled) 50%), linear-gradient(135deg, var(--color-disabled) 50%, transparent 50%), var(--color-base-darken);
   background-position: calc(100% - 2rem) calc(.5rem + 1rem), calc(100% - 1.45rem) calc(.5rem + 1rem), 100% 0;
   background-size: .6rem .6rem, .6rem .6rem, 2.5em 2.5em;
   background-repeat: no-repeat;

@@ -160,8 +160,8 @@ select {
     position: relative;
     height: unset;
     background:
-        linear-gradient(45deg, transparent 50%, var(--color-base) 50%),
-        linear-gradient(135deg, var(--color-base) 50%, transparent 50%),
+        linear-gradient(45deg, transparent 50%, var(--color-disabled) 50%),
+        linear-gradient(135deg, var(--color-disabled) 50%, transparent 50%),
         var(--color-base-darken);
     background-position:
         calc(100% - 2rem) calc(.5rem + 1rem),
