@@ -1,7 +1,6 @@
 table, .table {
     width: 100%;
     margin: calc(var(--padding) / 2) 0;
-
     &.table-striped {
         border-collapse: separate;
         border-spacing: 0;

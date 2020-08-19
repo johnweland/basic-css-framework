@@ -5,6 +5,8 @@
     --color-disabled: rgba(150, 150, 150, 1);
     --border-radius: 2px;
     --border-style: 1px solid var(--color-base-darken);
+    --box-shadow: 1px 1px 5px 0px var(--color-disabled);
+    --box-shadow-inset: inset 0px 0px 3px var(--color-font);
     --padding: 1rem;
 }
 
@@ -14,6 +16,8 @@
     --color-base-darken: rgba(15, 15, 15, 1);
     --color-disabled: rgba(30, 30, 30, 1);
     --border-style: 1px solid var(--color-base-darken);
+    --box-shadow: 1px 1px 5px 0px var(--color-base-darken);
+    --box-shadow-inset: inset 0px 0px 3px var(--color-base);
 }
 
 @font-face {

@@ -1,5 +1,5 @@
 const toggle = document.getElementById('toggle');
-const label = document.querySelector('.switch');
+const label = document.querySelector('label[for="toggle"].switch');
 const target = document.body;
 
 const toggleTheme = () => {
