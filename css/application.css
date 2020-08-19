@@ -123,9 +123,13 @@ table, .table {
 
 table.table-striped, .table.table-striped {
   border-collapse: separate;
-  border-spacing: 0;
+  border-spacing: 1px;
   border-radius: var(--border-radius);
   border: var(--border-style);
+}
+
+table.table-striped thead th, .table.table-striped thead th {
+  text-align: left;
 }
 
 table.table-striped tr:nth-child(even), .table.table-striped tr:nth-child(even) {
@@ -233,6 +237,7 @@ input[type="radio"]:checked::after {
 
 input[type="date"] {
   position: relative;
+  padding-bottom: calc(var(--padding) /3);
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator {
@@ -250,8 +255,12 @@ input[type="date"]::before {
   width: 15px;
   height: 20px;
   position: absolute;
-  top: 1.1rem;
+  top: 1rem;
   right: 1em;
+}
+
+input[type="date"] + label.inset-label {
+  padding-top: calc(var(--padding) / 4);
 }
 
 [type="color"] {
@@ -319,6 +328,10 @@ select {
   background-repeat: no-repeat;
   line-height: 3;
   padding: calc(var(--padding) / 2) var(--padding) 0 var(--padding);
+}
+
+select + label.inset-label {
+  padding-top: calc(var(--padding) / 8);
 }
 
 .form-group {

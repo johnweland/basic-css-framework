@@ -95,6 +95,7 @@ input[type="radio"] {
 
 input[type="date"] {
     position: relative;
+    padding-bottom: calc(var(--padding) /3);
     &::-webkit-calendar-picker-indicator {
         color: transparent;
         background: none;
@@ -109,8 +110,11 @@ input[type="date"] {
         width: 15px;
         height: 20px;
         position: absolute;
-        top: 1.1rem;
+        top: 1rem;
         right: 1em;
+    }
+    & + label.inset-label {
+        padding-top: calc(var(--padding) / 4);
     }
 }
 
@@ -184,6 +188,9 @@ select {
     background-repeat: no-repeat;
     line-height: 3;
     padding: calc(var(--padding) / 2) var(--padding) 0 var(--padding);
+    & + label.inset-label {
+        padding-top: calc(var(--padding) / 8);
+    }
 }
 
 .form-group {
