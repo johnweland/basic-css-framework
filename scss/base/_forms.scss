@@ -192,7 +192,9 @@ select {
     align-items: center;
     justify-self: start;
     flex-wrap: wrap;
-    & > *:not(label):not([type="checkbox"]):not([type="radio"]):not([type="color"]) {flex-grow: 1;}
+    & > *:not(label):not([type="checkbox"]):not([type="radio"]):not([type="color"]) {
+        flex-grow: 1;
+    }
     & > label:first-child {
         margin-left: calc(var(--padding) / 2);
     }
