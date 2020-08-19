@@ -32,6 +32,11 @@
     font-family: 'Montserrat', sans-serif;
     gap: .5rem;
 }
+
+* + * {
+    margin-top: calc(var(--padding) / 2);
+}
+
 html {
     font-size: 12px;;
 }

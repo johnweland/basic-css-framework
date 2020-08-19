@@ -32,6 +32,10 @@
   gap: .5rem;
 }
 
+* + * {
+  margin-top: calc(var(--padding) / 2);
+}
+
 html {
   font-size: 12px;
 }
@@ -150,7 +154,7 @@ label {
 input, select {
   appearance: none;
   -moz-appearance: none;
-  padding: var(--padding);
+  padding: 0 var(--padding);
   background-color: var(--color-base-darken);
   border: 1px solid transparent;
   outline: none;
@@ -158,7 +162,6 @@ input, select {
   font-size: 1.2rem;
   height: 4rem;
   transition: all 0.5s ease;
-  margin-top: calc(var(--padding) / 2);
 }
 
 input:disabled, select:disabled {
@@ -177,12 +180,12 @@ input:hover, input:focus, input:active, select:hover, select:focus, select:activ
 input[type="checkbox"], input[type="radio"] {
   appearance: none;
   vertical-align: middle;
-  margin-top: calc((var(--padding) / 2));
   display: inline-block;
   position: relative;
   width: auto;
   height: unset;
   min-height: unset;
+  padding: var(--padding);
 }
 
 input[type="checkbox"]:checked, input[type="radio"]:checked {
@@ -241,6 +244,10 @@ input[type="date"]::before {
   right: 1em;
 }
 
+[type="color"] {
+  padding: var(--padding);
+}
+
 [type="file"] {
   border: 0;
   clip: rect(0, 0, 0, 0);
@@ -263,7 +270,7 @@ input[type="date"]::before {
   outline: none;
   padding: 1.3rem 50px;
   position: relative;
-  top: 3px;
+  top: -3px;
   transition: all 0.3s;
   vertical-align: middle;
   overflow: hidden;
@@ -295,11 +302,11 @@ select {
   position: relative;
   height: unset;
   background: linear-gradient(45deg, transparent 50%, var(--color-disabled) 50%), linear-gradient(135deg, var(--color-disabled) 50%, transparent 50%), var(--color-base-darken);
-  background-position: calc(100% - 2rem) calc(.5rem + 1rem), calc(100% - 1.45rem) calc(.5rem + 1rem), 100% 0;
-  background-size: .6rem .6rem, .6rem .6rem, 2.5em 2.5em;
+  background-position: calc(100% - 2.5rem) calc(.5rem + 1rem), calc(100% - 1.45rem) calc(.5rem + 1rem), 100% 0;
+  background-size: .9em .9em, .9em .9em, 2.5em 2.5em;
   background-repeat: no-repeat;
-  line-height: 1.5em;
-  padding: var(--padding);
+  line-height: 3;
+  padding: calc(var(--padding) / 2) var(--padding) 0 var(--padding);
 }
 
 .form-group {
@@ -321,14 +328,14 @@ select {
 .form-group ::placeholder {
   position: relative;
   text-align: right;
-  top: -5px;
+  top: -10px;
 }
 
 .form-group label.inset-label, .form-group label.inset-label {
   position: absolute;
-  line-height: 5.2;
+  line-height: 3;
   height: 100%;
-  padding-left: calc(var(--padding) * 1.5);
+  padding-left: calc(var(--padding) * 1.1);
   pointer-events: none;
 }
 
@@ -339,11 +346,7 @@ select {
 .form-group :focus + label.inset-label, .form-group :valid + label.inset-label {
   line-height: 1;
   font-size: 1rem;
-  top: 1rem;
-}
-
-.form-group label + label:not(.inset-label) {
-  margin-left: calc(var(--padding) / 2);
+  top: 0;
 }
 
 a.btn, button, button.btn, input[type="button"], input[type="button"].btn {
