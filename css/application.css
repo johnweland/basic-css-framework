@@ -6,7 +6,7 @@
   --border-radius: 2px;
   --border-style: 1px solid var(--color-base-darken);
   --box-shadow: 1px 1px 5px 0px var(--color-disabled);
-  --box-shadow-inset: inset 0px 0px 3px var(--color-font);
+  --box-shadow-inset: inset 0px 0px 5px 0px var(--color-font);
   --padding: 1rem;
 }
 
@@ -17,7 +17,7 @@
   --color-disabled: rgba(30, 30, 30, 1);
   --border-style: 1px solid var(--color-base-darken);
   --box-shadow: 1px 1px 5px 0px var(--color-base-darken);
-  --box-shadow-inset: inset 0px 0px 3px var(--color-base);
+  --box-shadow-inset: inset 0px 0px 5px 0px var(--color-base);
 }
 
 @font-face {
@@ -173,6 +173,10 @@ input, select {
 input:disabled, select:disabled {
   background-color: var(--color-disabled);
   color: var(--color-base);
+}
+
+input:disabled:hover, input:disabled:focus, input:disabled:active, select:disabled:hover, select:disabled:focus, select:disabled:active {
+  border: 1px solid transparent;
 }
 
 input:disabled + label, select:disabled + label {
