@@ -5,3 +5,9 @@
 .inset-shadow {
     box-shadow: var(--box-shadow-inset);
 }
+
+.outline {
+    padding: var(--padding);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-base-darken);
+}

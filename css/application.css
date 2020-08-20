@@ -382,6 +382,12 @@ select + label.inset-label {
   box-shadow: var(--box-shadow-inset);
 }
 
+.outline {
+  padding: var(--padding);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--color-base-darken);
+}
+
 a.btn, button, button.btn, input[type="button"], input[type="button"].btn {
   appearance: none;
   height: unset;
@@ -499,6 +505,20 @@ a.btn.btn-outline:hover, a.btn.btn-outline:focus, button.btn-outline:hover, butt
   max-width: 1080px;
   width: 100%;
   margin: 0 auto;
+}
+
+.section {
+  padding: var(--padding);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--color-base-darken);
+  margin-top: 3rem;
+}
+
+.section > h2 {
+  margin-top: -3rem;
+  padding: 0 var(--padding);
+  width: max-content;
+  background-color: var(--color-base);
 }
 
 .flex-parent {
