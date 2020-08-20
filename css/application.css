@@ -374,6 +374,14 @@ select + label.inset-label {
   top: 0;
 }
 
+.shadow {
+  box-shadow: var(--box-shadow);
+}
+
+.inset-shadow {
+  box-shadow: var(--box-shadow-inset);
+}
+
 a.btn, button, button.btn, input[type="button"], input[type="button"].btn {
   appearance: none;
   height: unset;
@@ -453,8 +461,74 @@ a.btn.btn-outline:hover, a.btn.btn-outline:focus, button.btn-outline:hover, butt
   display: none !important;
 }
 
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: var(--color-base);
+  border: var(--border-style);
+  border-radius: var(__border-radius);
+  padding: var(--padding);
+}
+
+.card__title {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+
+.card__body {
+  flex-grow: 1;
+}
+
+.card__footer {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card__footer * {
+  margin-top: unset;
+}
+
+.card__footer *:last-of-type {
+  text-align: right;
+}
+
 .container {
   max-width: 1080px;
   width: 100%;
   margin: 0 auto;
+}
+
+.flex-parent {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  /* Required to push wrapping on to new line .*/
+  --multiplyer: calc(800px - 100%);
+  gap: 1rem;
+}
+
+.flex-parent > * {
+  margin-top: unset;
+  flex-basis: calc(var(--multiplyer) * 999);
+  /* calc((ideal width - container current width) * large number) */
+  flex-shrink: 1;
+  /* Default Value: allows item to shrink */
+  flex-grow: 1;
+  /*Default Value: 0, value 1 allows item to grow */
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  grid-gap: 1rem;
+  max-width: 1080px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.grid > * {
+  min-height: 5rem;
 }

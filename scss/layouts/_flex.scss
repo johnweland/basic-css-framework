@@ -1,0 +1,15 @@
+.flex-parent {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap; /* Required to push wrapping on to new line .*/
+    --multiplyer: calc(800px - 100%);
+    gap: 1rem;
+}
+
+.flex-parent > * {
+    margin-top: unset;
+    flex-basis: calc(var(--multiplyer) * 999); /* calc((ideal width - container current width) * large number) */
+    flex-shrink: 1; /* Default Value: allows item to shrink */
+    flex-grow: 1; /*Default Value: 0, value 1 allows item to grow */
+
+}

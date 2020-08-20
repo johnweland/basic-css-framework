@@ -1,0 +1,28 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background-color: var(--color-base);
+    border: var(--border-style);
+    border-radius: var(__border-radius);
+    padding: var(--padding);
+    &__title {
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+    }
+    &__body {
+        flex-grow: 1;
+    }
+    &__footer {
+        margin-top: auto;
+        display: flex;
+        justify-content: space-between;
+        & * {
+            margin-top: unset;
+            &:last-of-type {
+                text-align: right;
+            }
+        }
+    }
+}
