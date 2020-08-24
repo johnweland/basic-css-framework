@@ -1,23 +1,54 @@
+$charcoal:      rgba(49, 49, 49, 1) !default;
+$charcoal-dark:   darken($charcoal, 8%) !default;
+$charcoal-dark-x: darken($charcoal, 15%) !default;
+$charcoal-light:  lighten($charcoal, 10%) !default;
+$frost:         rgba(230, 230, 230, 1) !default;
+$frost-dark:      darken($frost, 8%) !default;
+$frost-dark-x:    darken($frost, 20%) !default;
+$frost-light:     lighten($frost, 10%) !default;
+
+$colors: (
+    "charcoal": $charcoal,
+    "charcoal-dark": $charcoal-dark,
+    "charcoal-dark-x": $charcoal-dark-x,
+    "charcoal-light": $charcoal-light,
+    "frost": $frost,
+    "frost-dark": $frost-dark,
+    "frost-dark-x": $frost-dark-x,
+    "frost-light": $frost-light,
+) !default;
+
+$theme-colors: (
+
+) !default;
+
 :root, [data-theme="light"], [data-theme="default"] {
-    --color-base: rgba(230, 230, 230, 1);
-    --color-font: rgba(49, 49, 49, 1);
-    --color-base-darken: rgba(206, 206, 206, 1);
-    --color-disabled: rgba(150, 150, 150, 1);
+    @each $color, $value in $colors {
+        --color-#{$color}: #{$value};
+    }
+    
+    @each $color, $value in $theme-colors {
+        --theme-color-#{$color}: #{$value};
+    }
+    --color-base: var(--color-frost);
+    --color-font: var(--color-charcoal);
+    --color-base-darken: var(--color-frost-dark);
+    --color-disabled: var(--color-frost-dark-x);
     --border-radius: 2px;
     --border-style: 1px solid var(--color-base-darken);
-    --box-shadow: 1px 1px 5px 0px var(--color-disabled);
-    --box-shadow-inset: inset 0px 0px 5px 0px var(--color-font);
+    --box-shadow: 1px 1px 5px 0px var(--color-frost-dark-x);
+    --box-shadow-inset: inset 0px 0px 5px 0px var(--color-frost-dark-x);
     --padding: 1rem;
 }
 
 [data-theme="dark"] {
-    --color-base: rgba(49, 49, 49, 1);
-    --color-font: rgba(230, 230, 230, 1);
-    --color-base-darken: rgba(15, 15, 15, 1);
-    --color-disabled: rgba(30, 30, 30, 1);
-    --border-style: 1px solid var(--color-base-darken);
-    --box-shadow: 1px 1px 5px 0px var(--color-base-darken);
-    --box-shadow-inset: inset 0px 0px 5px 0px var(--color-base);
+    --color-base: var(--color-charcoal);
+    --color-font: var(--color-frost);
+    --color-base-darken: var(--color-charcoal-dark);
+    --color-disabled: var(--color-charcoal-dark-x);
+    --border-style: 1px solid var(--color-charcoal-dark);
+    --box-shadow: 1px 1px 5px 0px var(--color-charcoal-dark);
+    --box-shadow-inset: inset 0px 0px 5px 0px var(--color-charcoal-dark-x);
 }
 
 @font-face {
