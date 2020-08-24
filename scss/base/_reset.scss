@@ -60,46 +60,22 @@ $theme-colors: (
     font-display: swap;
 }
 
+@font-face {
+    font-family: 'Spacemono';
+    font-style: normal;
+    font-weight: 400;
+    src: local('SpaceMono Regular'), local('Spacemono-Regular'),
+         url('../fonts/SpaceMono-Regular.ttf') format('truetype');
+    font-display: swap;
+}
+
 *, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
     gap: .5rem;
 }
 
 * + * {
     margin-top: calc(var(--padding) / 2);
-}
-
-html {
-    font-size: 12px;;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background-color: var(--color-base);
-    color: var(--color-font);
-    font-size: 1.4rem;
-    margin: 0;
-    padding: calc(var(--padding) / 2);
-}
-
-nav, header, main, footer {
-    padding: 1rem;
-}
-
-main {
-    @media screen and (min-width: 1080px) {
-        display: flex;
-    }
-}
-
-footer {
-    margin-top: auto;
-    display:flex;
-    align-items: center;
-    justify-content: center;
 }

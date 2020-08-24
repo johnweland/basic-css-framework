@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
     <link rel="stylesheet" href="css/application.min.css">
+    <link rel="stylesheet" href="css/solarized-dark.css">
     <title>Basic CSS Framework</title>
 </head>
 <body class="" data-theme="dark">
@@ -136,6 +137,45 @@
         <!-- / form -->
       </div>
     </section>
+
+
+    <section>
+      <div class="container section--outline">
+        <h2>Code</h2>
+        <div class="flex-parent">
+          <pre>
+            <code class="language-javascript highlight" data-lang="javascript">
+<span class="c1">// adapted from https://stackoverflow.com/a/48078807/1217368</span>
+<span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">.highlight</span><span class="dl">'</span><span class="p">).</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">parent</span><span class="p">().</span><span class="nx">hasClass</span><span class="p">(</span><span class="dl">'</span><span class="s1">no-select-button</span><span class="dl">'</span><span class="p">))</span> <span class="p">{</span>
+
+      <span class="c1">// create an id for the current code section</span>
+      <span class="kd">var</span> <span class="nx">currentId</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">codeblock</span><span class="dl">"</span> <span class="o">+</span> <span class="p">(</span><span class="nx">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+
+      <span class="c1">// find the code section and add the id to it</span>
+      <span class="kd">var</span> <span class="nx">codeSection</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">find</span><span class="p">(</span><span class="dl">'</span><span class="s1">code</span><span class="dl">'</span><span class="p">);</span>
+      <span class="nx">codeSection</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="dl">'</span><span class="s1">id</span><span class="dl">'</span><span class="p">,</span> <span class="nx">currentId</span><span class="p">);</span>
+
+      <span class="c1">// now create the button, setting the clipboard target to the id</span>
+      <span class="kd">var</span> <span class="nx">btn</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">a</span><span class="dl">'</span><span class="p">);</span>
+      <span class="nx">btn</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="dl">'</span><span class="s1">type</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">btn</span><span class="dl">'</span><span class="p">);</span>
+      <span class="nx">btn</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="dl">'</span><span class="s1">class</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">btn-copy-code</span><span class="dl">'</span><span class="p">);</span>
+      <span class="nx">btn</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="dl">'</span><span class="s1">data-clipboard-target</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">#</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">currentId</span><span class="p">);</span>
+      <span class="nx">btn</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">&lt;i class="far fa-file-code fa-2x"&gt;&lt;/i&gt;&amp;nbsp;&amp;nbsp;Copy to clipboard</span><span class="dl">'</span><span class="p">;</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">insertBefore</span><span class="p">(</span><span class="nx">btn</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">firstChild</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">});</span>
+  <span class="k">new</span> <span class="nx">ClipboardJS</span><span class="p">(</span><span class="dl">'</span><span class="s1">.btn-copy-code</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">});</span>
+            </code>
+          </pre>
+          
+        </div>
+      </div>
+    </section>
+
+
     <section>
       <div class="container section--outline">
         <h2>Cards</h2>

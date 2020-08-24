@@ -1,3 +1,36 @@
+html {
+    font-size: 12px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--color-base);
+    color: var(--color-font);
+    font-size: 1.4rem;
+    margin: 0;
+    padding: calc(var(--padding) / 2);
+}
+
+nav, header, main, footer {
+    padding: 1rem;
+}
+
+main {
+    @media screen and (min-width: 1080px) {
+        display: flex;
+    }
+}
+
+footer {
+    margin-top: auto;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .container {
     max-width: 1080px;
     width: 100%;

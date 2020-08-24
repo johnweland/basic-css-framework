@@ -35,3 +35,19 @@ ol, ul {
         margin: 1rem 0;
     }
 }
+
+
+pre {
+    display: flex;
+    font-family: monospace;
+    font-size: 1.2rem;
+    background-color: var(--color-base-darken);
+    padding: var(--padding);
+    box-shadow: var(--box-shadow-inset);
+    overflow-x: scroll;
+    & + code {
+        font-family: monospace;
+        font-size: 1rem;
+        height: 100%;
+    }
+}
