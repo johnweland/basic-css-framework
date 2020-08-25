@@ -89,27 +89,27 @@
          <legend>Example Form Legend</legend>
           <fieldset>
             <div class="form-group">
-              <input type="text" class="full-width" title="Disabled" disabled required><label class="inset-label">Disabled</label>
+              <input id="input01" type="text" class="full-width" title="Disabled" disabled required><label for="input01" class="inset-label">Disabled</label>
             </div>
             <div class="form-group">
-              <input type="text" class="full-width" required><label class="inset-label">Name</label>
+              <input id="input02" type="text" class="full-width" required><label for="input02" class="inset-label">Name</label>
             </div>
             <div class="form-group">
-              <input type="password" class="full-width" required><label class="inset-label">Password</label>
+              <input id="input03" type="password" class="full-width" required><label for="input03" class="inset-label">Password</label>
             </div>
             <div class="form-group">
-              <input type="email" class="full-width" title="disabled" placeholder="test@example.com" required><label class="inset-label">Email</label>
+              <input id="input04" type="email" class="full-width" title="disabled" placeholder="test@example.com" required><label for="input04" class="inset-label">Email</label>
             </div>
           </fieldset>
           <legend>Extra Data</legend>
           <fieldset>
             <div class="form-group">
-              <input type="number" class="full-width" required><label class="inset-label">Age</label>
+              <input id="input05" type="number" class="full-width" required><label for="input05" class="inset-label">Age</label>
             </div>
             <div class="form-group">
-              <input type="date"><label class="inset-label">Birthday</label>
-              <input type="file"><label>Upload</label>
-              <label>Favorite Color</label><input type="color">
+              <input id="input06" type="date"><label for="input06" class="inset-label">Birthday</label>
+              <input id="input07" type="file"><label for="input07">Upload</label>
+              <label for="input08">Favorite Color</label><input id="input08" type="color">
             </div>
             <div class="form-group">
               <label>Checkbox</label>
@@ -123,14 +123,14 @@
               <input type="radio" name="test" id="b"><label for="b">Option B</label>
             </div>
             <div class="form-group">
-              <select class="full-width" required>
+              <select id="input12" class="full-width" required>
                 <option disabled selected></option>
                 <option>Option 1</option>
                 <option>Option 2</option>
                 <option>Option 3</option>
                 <option>Option 4</option>
               </select>
-              <label class="inset-label">Select an Option</label>
+              <label for="input12" class="inset-label">Select an Option</label>
             </div>
           </fieldset>
         </form>
@@ -144,8 +144,8 @@
         <h2>Code</h2>
         <div class="flex-parent">
           <pre>
-            <code class="language-javascript highlight" data-lang="javascript">
-<span class="c1">// adapted from https://stackoverflow.com/a/48078807/1217368</span>
+            <h3>clipboard.js</h5>
+            <code class="language-javascript highlight" data-lang="javascript"><span class="c1">// adapted from https://stackoverflow.com/a/48078807/1217368</span>
 <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
   <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">.highlight</span><span class="dl">'</span><span class="p">).</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
       <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">parent</span><span class="p">().</span><span class="nx">hasClass</span><span class="p">(</span><span class="dl">'</span><span class="s1">no-select-button</span><span class="dl">'</span><span class="p">))</span> <span class="p">{</span>

@@ -31,3 +31,8 @@
 .checkbox { 
     display : none !important;
 }
+
+
+[aria-checked="false"] + .switch {
+    background-color: var(--theme-color-primary);
+}
