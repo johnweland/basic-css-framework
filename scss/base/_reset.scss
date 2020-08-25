@@ -1,12 +1,12 @@
-$charcoal:      rgba(49, 49, 49, 1) !default;
+$charcoal:      rgb(49, 49, 49) !default;
 $charcoal-dark:   darken($charcoal, 8%) !default;
 $charcoal-dark-x: darken($charcoal, 15%) !default;
 $charcoal-light:  lighten($charcoal, 10%) !default;
-$frost:         rgba(230, 230, 230, 1) !default;
+$frost:         rgb(230, 230, 230) !default;
 $frost-dark:      darken($frost, 8%) !default;
 $frost-dark-x:    darken($frost, 20%) !default;
 $frost-light:     lighten($frost, 10%) !default;
-$mint:          rgba(100, 180, 150, 1) !default;
+$mint:          rgb(100, 180, 150) !default;
 $sunburst:      rgb(230, 140, 10) !default;
 
 $colors: (
@@ -22,8 +22,25 @@ $colors: (
     "sunburst":        $sunburst
 ) !default;
 
-$theme-colors: (
-    "primary" :  $sunburst
+
+$theme-light-colors: (
+    "base":     $frost,
+    "tint":     $frost-light,
+    "shade":    $frost-dark,
+    "shade-x":  $frost-dark-x,
+    "disabled":  $frost-dark-x,
+    "font":     $charcoal,
+    "accent":  $mint
+) !default;
+
+$theme-dark-colors: (
+    "base":     $charcoal,
+    "tint":     $charcoal-light,
+    "shade":    $charcoal-dark,
+    "shade-x":  $charcoal-dark-x,
+    "disabled": $charcoal-dark-x,
+    "font":     $frost,
+    "accent":  $sunburst
 ) !default;
 
 :root, [data-theme="light"], [data-theme="default"] {
@@ -31,28 +48,23 @@ $theme-colors: (
         --color-#{$color}: #{$value};
     }
     
-    @each $color, $value in $theme-colors {
-        --theme-color-#{$color}: #{$value};
+    @each $color, $value in $theme-light-colors {
+        --theme-#{$color}: #{$value};
     }
-    --color-base: var(--color-frost);
-    --color-font: var(--color-charcoal);
-    --color-base-darken: var(--color-frost-dark);
-    --color-disabled: var(--color-frost-dark-x);
     --border-radius: 2px;
-    --border-style: 1px solid var(--color-base-darken);
-    --box-shadow: 1px 1px 5px 0px var(--color-frost-dark-x);
-    --box-shadow-inset: inset 0px 0px 5px 0px var(--color-frost-dark-x);
+    --border-style: 1px solid var(--theme-shade);
+    --box-shadow: 1px 1px 5px 0px var(--theme-shade-x);
+    --box-shadow-inset: inset 0px 0px 5px 0px var(--theme-shade-x);
     --padding: 1rem;
 }
 
 [data-theme="dark"] {
-    --color-base: var(--color-charcoal);
-    --color-font: var(--color-frost);
-    --color-base-darken: var(--color-charcoal-dark);
-    --color-disabled: var(--color-charcoal-dark-x);
-    --border-style: 1px solid var(--color-charcoal-dark);
-    --box-shadow: 1px 1px 5px 0px var(--color-charcoal-dark);
-    --box-shadow-inset: inset 0px 0px 5px 0px var(--color-charcoal-dark-x);
+    @each $color, $value in $theme-dark-colors {
+        --theme-#{$color}: #{$value};
+    }
+    --border-style: 1px solid var(--theme-shade);
+    --box-shadow: 1px 1px 5px 0px var(--theme-shade-x);
+    --box-shadow-inset: inset 0px 0px 5px 0px var(--theme-shade-x);
 }
 
 @font-face {

@@ -9,26 +9,31 @@
   --color-frost-light: white;
   --color-mint: #64b496;
   --color-sunburst: #e68c0a;
-  --theme-color-primary: #e68c0a;
-  --color-base: var(--color-frost);
-  --color-font: var(--color-charcoal);
-  --color-base-darken: var(--color-frost-dark);
-  --color-disabled: var(--color-frost-dark-x);
+  --theme-base: #e6e6e6;
+  --theme-tint: white;
+  --theme-shade: #d2d2d2;
+  --theme-shade-x: #b3b3b3;
+  --theme-disabled: #b3b3b3;
+  --theme-font: #313131;
+  --theme-accent: #64b496;
   --border-radius: 2px;
-  --border-style: 1px solid var(--color-base-darken);
-  --box-shadow: 1px 1px 5px 0px var(--color-frost-dark-x);
-  --box-shadow-inset: inset 0px 0px 5px 0px var(--color-frost-dark-x);
+  --border-style: 1px solid var(--theme-shade);
+  --box-shadow: 1px 1px 5px 0px var(--theme-shade-x);
+  --box-shadow-inset: inset 0px 0px 5px 0px var(--theme-shade-x);
   --padding: 1rem;
 }
 
 [data-theme="dark"] {
-  --color-base: var(--color-charcoal);
-  --color-font: var(--color-frost);
-  --color-base-darken: var(--color-charcoal-dark);
-  --color-disabled: var(--color-charcoal-dark-x);
-  --border-style: 1px solid var(--color-charcoal-dark);
-  --box-shadow: 1px 1px 5px 0px var(--color-charcoal-dark);
-  --box-shadow-inset: inset 0px 0px 5px 0px var(--color-charcoal-dark-x);
+  --theme-base: #313131;
+  --theme-tint: #4b4b4b;
+  --theme-shade: #1d1d1d;
+  --theme-shade-x: #0b0b0b;
+  --theme-disabled: #0b0b0b;
+  --theme-font: #e6e6e6;
+  --theme-accent: #e68c0a;
+  --border-style: 1px solid var(--theme-shade);
+  --box-shadow: 1px 1px 5px 0px var(--theme-shade-x);
+  --box-shadow-inset: inset 0px 0px 5px 0px var(--theme-shade-x);
 }
 
 @font-face {
@@ -90,12 +95,12 @@ h6 {
 }
 
 a, p {
-  color: var(--color-font);
+  color: var(--theme-font);
   font-size: clamp(1.25rem, 1.5vw, 1.5rem);
 }
 
 a:hover, a :active {
-  color: var(--theme-color-primary);
+  color: var(--theme-accent);
   font-weight: 500;
 }
 
@@ -113,7 +118,7 @@ pre {
   flex-direction: column;
   font-family: monospace;
   font-size: 1.2rem;
-  background-color: var(--color-base-darken);
+  background-color: var(--theme-shade);
   padding: var(--padding);
   box-shadow: var(--box-shadow-inset);
   overflow-x: scroll;
@@ -148,7 +153,7 @@ table.table-striped thead th, .table.table-striped thead th {
 }
 
 table.table-striped tr:nth-child(even), .table.table-striped tr:nth-child(even) {
-  background-color: var(--color-base-darken);
+  background-color: var(--theme-shade);
 }
 
 table.table-striped th, table.table-striped td, .table.table-striped th, .table.table-striped td {
@@ -161,14 +166,14 @@ legend {
   margin-left: 1rem;
   margin-bottom: -1rem;
   padding: 0 1rem;
-  background-color: var(--color-base);
+  background-color: var(--theme-base);
   width: fit-content;
 }
 
 fieldset {
   padding: var(--padding);
   border-radius: var(--border-radius);
-  border: 1px solid var(--color-base-darken);
+  border: 1px solid var(--theme-shade);
 }
 
 label {
@@ -179,10 +184,10 @@ input, select {
   appearance: none;
   -moz-appearance: none;
   padding: 0 var(--padding);
-  background-color: var(--color-base-darken);
+  background-color: var(--theme-shade);
   border: 1px solid transparent;
   outline: none;
-  color: var(--color-font);
+  color: var(--theme-font);
   font-size: 1.2rem;
   height: 4rem;
   transition: all 0.3s ease;
@@ -190,8 +195,8 @@ input, select {
 }
 
 input:disabled, select:disabled {
-  background-color: var(--color-disabled);
-  color: var(--color-base);
+  background-color: var(--theme-disabled);
+  color: var(--theme-base);
 }
 
 input:disabled:hover, input:disabled:focus, input:disabled:active, select:disabled:hover, select:disabled:focus, select:disabled:active {
@@ -199,11 +204,11 @@ input:disabled:hover, input:disabled:focus, input:disabled:active, select:disabl
 }
 
 input:disabled + label, select:disabled + label {
-  color: var(--color-base);
+  color: var(--theme-base);
 }
 
 input:hover, input:focus, input:active, select:hover, select:focus, select:active {
-  border: 1px solid var(--color-font);
+  border: 1px solid var(--theme-font);
 }
 
 input[type="checkbox"], input[type="radio"] {
@@ -218,9 +223,9 @@ input[type="checkbox"], input[type="radio"] {
 }
 
 input[type="checkbox"]:checked, input[type="radio"]:checked {
-  background-color: var(--theme-color-primary);
+  background-color: var(--theme-accent);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05), inset 15px 10px -12px rgba(255, 255, 255, 0.1);
-  color: var(--color-font);
+  color: var(--theme-font);
 }
 
 input[type="checkbox"]:checked::after, input[type="radio"]:checked::after {
@@ -229,15 +234,15 @@ input[type="checkbox"]:checked::after, input[type="radio"]:checked::after {
   position: absolute;
   top: 0px;
   left: 4px;
-  color: var(--color-font);
+  color: var(--theme-font);
 }
 
 input[type="checkbox"]:checked:disabled, input[type="radio"]:checked:disabled {
-  background-color: var(--color-disabled);
+  background-color: var(--theme-disabled);
 }
 
 input[type="checkbox"]:checked:disabled::after, input[type="radio"]:checked:disabled::after {
-  color: var(--color-base);
+  color: var(--theme-base);
 }
 
 input[type="checkbox"]:checked::after {
@@ -267,7 +272,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 input[type="date"]::before {
-  color: var(--color-font);
+  color: var(--theme-font);
   background: none;
   display: block;
   font-family: 'FontAwesome';
@@ -301,10 +306,10 @@ input[type="date"] + label.inset-label {
 }
 
 [type="file"] + label {
-  background: var(--color-base-darken);
+  background: var(--theme-shade);
   border: 1px solid transparent;
   border-radius: var(--border-radius);
-  color: var(--color-font);
+  color: var(--theme-font);
   cursor: pointer;
   display: inline-block;
   outline: none;
@@ -318,7 +323,7 @@ input[type="date"] + label.inset-label {
 }
 
 [type="file"] + label::before {
-  color: var(--color-font);
+  color: var(--theme-font);
   font-family: "FontAwesome";
   content: '\f0ee';
   font-size: 130%;
@@ -332,7 +337,7 @@ input[type="date"] + label.inset-label {
 }
 
 [type="file"] + label:hover, [type="file"] + label:focus, [type="file"] + label:active {
-  border: 1px solid var(--color-font);
+  border: 1px solid var(--theme-font);
 }
 
 [type="file"] + label:hover::before, [type="file"] + label:focus::before, [type="file"] + label:active::before {
@@ -342,7 +347,7 @@ input[type="date"] + label.inset-label {
 select {
   position: relative;
   height: unset;
-  background: linear-gradient(45deg, transparent 50%, var(--color-disabled) 50%), linear-gradient(135deg, var(--color-disabled) 50%, transparent 50%), var(--color-base-darken);
+  background: linear-gradient(45deg, transparent 50%, var(--theme-disabled) 50%), linear-gradient(135deg, var(--theme-disabled) 50%, transparent 50%), var(--theme-shade);
   background-position: calc(100% - 2.19rem) calc(.8rem + 1rem), calc(100% - 1.45rem) calc(.8rem + 1rem), 100% 0;
   background-size: .6em .6em, .6em .6em, 2.5em 2.5em;
   background-repeat: no-repeat;
@@ -405,7 +410,7 @@ select + label.inset-label {
 .outline {
   padding: var(--padding);
   border-radius: var(--border-radius);
-  border: 1px solid var(--color-base-darken);
+  border: 1px solid var(--theme-shade);
 }
 
 a.btn, button, button.btn, input[type="button"], input[type="button"].btn {
@@ -415,11 +420,11 @@ a.btn, button, button.btn, input[type="button"], input[type="button"].btn {
   padding: var(--padding);
   font-size: clamp(1.25rem, 1.5vw, 1.5rem);
   width: auto;
-  background-color: var(--color-base-darken);
+  background-color: var(--theme-shade);
   border-radius: var(--border-radius);
   border: var(--border-style);
   border-color: transparent;
-  color: var(--color-font);
+  color: var(--theme-font);
   outline: unset;
   text-decoration: unset;
   text-align: center;
@@ -431,7 +436,7 @@ a.btn, button, button.btn, input[type="button"], input[type="button"].btn {
 }
 
 a.btn:hover, a.btn:focus, button:hover, button:focus, button.btn:hover, button.btn:focus, input[type="button"]:hover, input[type="button"]:focus, input[type="button"].btn:hover, input[type="button"].btn:focus {
-  border: 1px solid var(--color-font);
+  border: 1px solid var(--theme-font);
 }
 
 a.btn:active, button:active, button.btn:active, input[type="button"]:active, input[type="button"].btn:active {
@@ -443,12 +448,12 @@ a.btn:last-child, button:last-child, button.btn:last-child, input[type="button"]
 }
 
 a.btn.btn--outline, button.btn--outline, button.btn.btn--outline, input[type="button"].btn--outline, input[type="button"].btn.btn--outline {
-  background-color: var(--color-base);
-  border-color: var(--color-base-darken);
+  background-color: var(--theme-base);
+  border-color: var(--theme-shade);
 }
 
 a.btn.btn--outline:hover, a.btn.btn--outline:focus, button.btn--outline:hover, button.btn--outline:focus, button.btn.btn--outline:hover, button.btn.btn--outline:focus, input[type="button"].btn--outline:hover, input[type="button"].btn--outline:focus, input[type="button"].btn.btn--outline:hover, input[type="button"].btn.btn--outline:focus {
-  border: 1px solid var(--color-font-light);
+  border: 1px solid var(--theme-font-light);
 }
 
 .switch {
@@ -457,9 +462,9 @@ a.btn.btn--outline:hover, a.btn.btn--outline:focus, button.btn--outline:hover, b
   top: .35rem;
   width: 42px;
   height: 22px;
-  background-color: var(--color-base-darken);
+  background-color: var(--theme-accent);
   border-radius: 50px;
-  border: 1px solid var(--color-base-darken);
+  border: 1px solid var(--theme-shade);
   transition: all 0.3s;
   box-shadow: var(--box-shadow-inset);
   cursor: pointer;
@@ -472,7 +477,7 @@ a.btn.btn--outline:hover, a.btn.btn--outline:focus, button.btn--outline:hover, b
   height: 20px;
   border-radius: 50%;
   background: url('data:image/svg+xml;utf8, <svg width="1rem" height="1rem" viewBox="0 0 16 16" class="bi bi-circle-half" fill="gray" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 15V1a7 7 0 1 1 0 14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/></svg>') no-repeat 50%;
-  background-color: var(--color-base);
+  background-color: var(--theme-base);
   top: 0px;
   left: 0px;
   transition: all 0.3s;
@@ -488,14 +493,14 @@ a.btn.btn--outline:hover, a.btn.btn--outline:focus, button.btn--outline:hover, b
 }
 
 [aria-checked="false"] + .switch {
-  background-color: var(--theme-color-primary);
+  background-color: var(--theme-accent);
 }
 
 .card {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  background-color: var(--color-base);
+  background-color: var(--theme-base);
   border: var(--border-style);
   border-radius: var(__border-radius);
   padding: var(--padding);
@@ -534,8 +539,8 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: var(--color-base);
-  color: var(--color-font);
+  background-color: var(--theme-base);
+  color: var(--theme-font);
   font-size: 1.4rem;
   margin: 0;
   padding: calc(var(--padding) / 2);
@@ -567,7 +572,7 @@ footer {
 .section--outline {
   padding: var(--padding);
   border-radius: var(--border-radius);
-  border: 1px solid var(--color-base-darken);
+  border: 1px solid var(--theme-shade);
   margin-top: 3rem;
 }
 
@@ -575,7 +580,7 @@ footer {
   margin-top: -3rem;
   padding: 0 var(--padding);
   width: max-content;
-  background-color: var(--color-base);
+  background-color: var(--theme-base);
 }
 
 .flex-parent {

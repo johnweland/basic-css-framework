@@ -10,7 +10,7 @@ table, .table {
             text-align: left;
         }
         & tr:nth-child(even) {
-            background-color: var(--color-base-darken);
+            background-color: var(--theme-shade);
         }
         & th, td {
             padding: calc(var(--padding) / 2);

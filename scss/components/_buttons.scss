@@ -5,11 +5,11 @@ a.btn, button, button.btn, input[type="button"], input[type="button"].btn {
     padding: var(--padding);
     font-size: clamp(1.25rem, 1.5vw, 1.5rem);
     width: auto;
-    background-color: var(--color-base-darken);
+    background-color: var(--theme-shade);
     border-radius: var(--border-radius);
     border: var(--border-style);
     border-color: transparent;
-    color: var(--color-font);
+    color: var(--theme-font);
     outline: unset;
     text-decoration: unset;
     text-align: center;
@@ -18,7 +18,7 @@ a.btn, button, button.btn, input[type="button"], input[type="button"].btn {
     transition: all 0.3s;
     box-shadow: var(--box-shadow);
     &:hover, &:focus {
-        border: 1px solid var(--color-font);
+        border: 1px solid var(--theme-font);
     }
     &:active {
         transform: scale(0.95);
@@ -29,10 +29,10 @@ a.btn, button, button.btn, input[type="button"], input[type="button"].btn {
     }
 
     &.btn--outline {
-        background-color: var(--color-base);
-        border-color: var(--color-base-darken);
+        background-color: var(--theme-base);
+        border-color: var(--theme-shade);
         &:hover, &:focus {
-            border: 1px solid var(--color-font-light);
+            border: 1px solid var(--theme-font-light);
         }
     }
 }

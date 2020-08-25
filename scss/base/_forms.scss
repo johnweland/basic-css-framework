@@ -4,14 +4,14 @@ legend {
     margin-left: 1rem;
     margin-bottom: -1rem;
     padding: 0 1rem;
-    background-color: var(--color-base);
+    background-color: var(--theme-base);
     width: fit-content;
 }
 
 fieldset {
     padding: var(--padding);
     border-radius: var(--border-radius);
-    border: 1px solid var(--color-base-darken);
+    border: 1px solid var(--theme-shade);
 }
 
 label {
@@ -22,26 +22,26 @@ input, select {
     appearance: none;
     -moz-appearance: none;
     padding: 0 var(--padding);
-    background-color: var(--color-base-darken);
+    background-color: var(--theme-shade);
     border: 1px solid transparent;
     outline:none;
-    color: var(--color-font);
+    color: var(--theme-font);
     font-size: 1.2rem;
     height: 4rem;
     transition: all 0.3s ease;
     box-shadow: var(--box-shadow-inset);
     &:disabled {
-        background-color: var(--color-disabled);
-        color: var(--color-base);
+        background-color: var(--theme-disabled);
+        color: var(--theme-base);
         &:hover, &:focus, &:active {
             border: 1px solid transparent;
         }
         & + label {
-            color: var(--color-base);
+            color: var(--theme-base);
         }
     }
     &:hover, &:focus, &:active {
-        border: 1px solid var(--color-font);
+        border: 1px solid var(--theme-font);
     }
 }
 
@@ -55,21 +55,21 @@ input[type="checkbox"], input[type="radio"] {
     min-height: unset;
     padding: var(--padding);
     &:checked {
-        background-color: var(--theme-color-primary);
+        background-color: var(--theme-accent);
         box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1);
-        color: var(--color-font);
+        color: var(--theme-font);
         &::after {
             content: '\2714';
             font-size: 1.6rem;
             position: absolute;
             top: 0px;
             left: 4px;
-            color: var(--color-font);
+            color: var(--theme-font);
         }
         &:disabled {
-            background-color: var(--color-disabled);
+            background-color: var(--theme-disabled);
             &::after {
-                color: var(--color-base); 
+                color: var(--theme-base); 
             }
         }
     }
@@ -104,7 +104,7 @@ input[type="date"] {
         z-index: 1;
     }
     &::before {
-        color: var(--color-font);
+        color: var(--theme-font);
         background: none;
         display: block;
         font-family: 'FontAwesome';
@@ -136,10 +136,10 @@ input[type="date"] {
     height: 1px;
     cursor: pointer;
     & + label {
-        background: var(--color-base-darken);
+        background: var(--theme-shade);
         border: 1px solid transparent;
         border-radius: var(--border-radius);
-        color:var(--color-font);
+        color:var(--theme-font);
         cursor: pointer;
         display: inline-block;
         outline: none;
@@ -151,7 +151,7 @@ input[type="date"] {
         overflow: hidden;
         box-shadow: var(--box-shadow-inset);
         &::before {
-            color: var(--color-font);
+            color: var(--theme-font);
             font-family:"FontAwesome";
             content: '\f0ee';
             font-size: 130%;
@@ -164,7 +164,7 @@ input[type="date"] {
             width: 100%;
         }
         &:hover, &:focus, &:active {
-            border: 1px solid var(--color-font);
+            border: 1px solid var(--theme-font);
             &::before {
                 left: 15%;
             }
@@ -176,9 +176,9 @@ select {
     position: relative;
     height: unset;
     background:
-        linear-gradient(45deg, transparent 50%, var(--color-disabled) 50%),
-        linear-gradient(135deg, var(--color-disabled) 50%, transparent 50%),
-        var(--color-base-darken);
+        linear-gradient(45deg, transparent 50%, var(--theme-disabled) 50%),
+        linear-gradient(135deg, var(--theme-disabled) 50%, transparent 50%),
+        var(--theme-shade);
     background-position:
         calc(100% - 2.19rem) calc(.8rem + 1rem),
         calc(100% - 1.45rem) calc(.8rem + 1rem),

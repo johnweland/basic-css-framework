@@ -24,12 +24,12 @@ h6 {
 }
 
 a, p {
-    color: var(--color-font);
+    color: var(--theme-font);
     font-size: clamp(1.25rem, 1.5vw, 1.5rem);
 }
 a {
     &:hover, :active {
-        color: var(--theme-color-primary);
+        color: var(--theme-accent);
         font-weight:  500;
     }
 
@@ -49,7 +49,7 @@ pre {
     flex-direction: column;
     font-family: monospace;
     font-size: 1.2rem;
-    background-color: var(--color-base-darken);
+    background-color: var(--theme-shade);
     padding: var(--padding);
     box-shadow: var(--box-shadow-inset);
     overflow-x: scroll;
